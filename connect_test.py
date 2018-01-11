@@ -2,7 +2,7 @@
 from browser import document as doc
 from browser import html
 
-document <= "Hello world !"
+doc <= "Hello world !"
 
 
 
