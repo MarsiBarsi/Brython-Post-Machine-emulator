@@ -1,10 +1,17 @@
-
 <html>
 <head>
 <script src="/brython.js"></script>
 </head>
 <body onload="brython()">
-<script type="text/python" src='connect_test.py'></script>
+<script type="text/python">
+from browser import document, alert
+
+# bind event 'click' on button to function echo
+@document["mybutton"].bind("click")
+def echo(ev):
+    alert(document["zone"].value)
+
+</script>
 <input id="zone">
 <button id="mybutton">click !</button>
 </body>
