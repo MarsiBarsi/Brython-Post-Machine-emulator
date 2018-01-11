@@ -2,6 +2,10 @@
 from browser import document as doc
 from browser import html
 
+document <= "Hello world !"
+
+
+
 # All the elements will be inserted in the div with the "container" id
 container = doc['container']
 
