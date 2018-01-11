@@ -12,8 +12,11 @@ variable += 100;
 
 array = []
 
-for i in range 10:
-    array.attend(i)
+for i in range (10):
+    array.append(i)
+
+print(variable)
+print(array)
 
 document <= variable,"\n"
 document <= "=======\n"
