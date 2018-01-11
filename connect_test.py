@@ -7,5 +7,16 @@ def echo(ev):
     document.write("hello1")
     document <= "Hello2"
 
-document.write("hello5\n")
-document <= "Hello6"
+variable = 25;
+variable += 100;
+
+array = []
+
+for i in range 10:
+    array.attend(i)
+
+document <= variable,"\n"
+document <= "=======\n"
+document <= array
+document <= "========"
+document.write(array)
