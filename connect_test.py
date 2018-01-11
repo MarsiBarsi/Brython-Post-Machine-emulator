@@ -7,5 +7,5 @@ def echo(ev):
     document.write("hello1")
     document <= "Hello2"
 
-document.write("hello3")
-document <= "Hello4"
+document.write("hello5\n")
+document <= "Hello6"
