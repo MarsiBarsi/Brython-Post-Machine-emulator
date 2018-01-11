@@ -35,8 +35,8 @@ def animloop(t):
 # bind event 'click' on button to function echo
 @document["mybutton"].bind("click")
 def echo(ev):
-    alert(document["zone"].value)
-
+    alert("rabotaet",document["zone"].value)
+    document["zone15"].write(array,"\n",variable)
 
 variable = 25;
 variable += 100;
@@ -45,5 +45,3 @@ array = []
 
 for i in range (10):
     array.append(i)
-
-change()
