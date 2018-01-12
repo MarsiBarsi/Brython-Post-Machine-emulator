@@ -36,7 +36,7 @@ def animloop(t):
 @document["mybutton"].bind("click")
 def echo(ev):
     alert("rabotaet",document["zone"].value)
-    document["zone15"].write(array,"\n",variable)
+    document["zone15"] <= str(array,"\n",variable)
 
 variable = 25;
 variable += 100;
