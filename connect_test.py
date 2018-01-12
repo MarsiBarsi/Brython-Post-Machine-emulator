@@ -7,7 +7,7 @@ def change(event):
 
 @document["mybutton"].bind("click")
 def echo(ev):
-    document["zone15"] <= str(array,"\n",variable)
+    document["zone15"].textContent = str(array,"\n",variable)
 
 j = 1
 
