@@ -35,7 +35,7 @@ def animloop(t):
 # bind event 'click' on button to function echo
 @document["mybutton"].bind("click")
 def echo(ev):
-    alert("rabotaet",document["zone"].value)
+    alert("rabotaet2",document["zone"].value)
     document["zone15"] <= str(array,"\n",variable)
 
 variable = 25;
