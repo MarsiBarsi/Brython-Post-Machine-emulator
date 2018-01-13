@@ -2,12 +2,13 @@ from browser import document, alert
 
 @document['button15'].bind('click')
 def change(event):
+    array.append('привет')
     array[i] += 1
     j += 1
 
 @document["mybutton"].bind("click")
 def echo(ev):
-    document["zone15"].textContent = str(array,"\n",variable)
+    document["zone15"].textContent = str(array,variable)
 
 j = 1
 
