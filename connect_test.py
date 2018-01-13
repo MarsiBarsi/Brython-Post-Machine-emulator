@@ -21,4 +21,8 @@ array = []
 for i in range (10):
     array.append(i)
 
-document["zone15"] <= str('тест от 19.05')
+document["zone15"] <= str('''тест от 08.04
+            разный текст
+
+                на разных уровнях
+''')
