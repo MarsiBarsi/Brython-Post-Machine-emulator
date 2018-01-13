@@ -19,14 +19,14 @@ def echo(ev):
 
 def array_string():
     out_string = '| '
-    for i in range (15)
+    for i in range (15):
         out_string += str(array[i])
         out_string += ' | '
-
+    return out_string
 
 array = [0 for i in range (100)]
 
-array_string()
+out_string = array_string()
 
 position = 1
 
