@@ -10,20 +10,13 @@ def change(event):
 def echo(ev):
     document["zone15"].textContent = str(array,variable)
 
-j = 1
 
-variable = 25;
-variable += 100;
+array = [0 for i in range (100)]
 
+out_string = '| '
 
+for i in range (15)
+    out_string += str(array[i])
+    out_string += ' | '
 
-array = []
-
-for i in range (10):
-    array.append(i)
-
-document["zone15"] <= str('''тест от 08.04
-            разный текст
-
-                на разных уровнях
-''')
+document["zone15"] <= out_string
