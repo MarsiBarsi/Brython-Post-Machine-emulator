@@ -1,5 +1,5 @@
 from browser import document, alert
-import time
+#import time
 
 
 @document['do_one'].bind('click')
@@ -55,11 +55,14 @@ def main_cat_moving(action):
 
     if action == 'up':
         main_cat_position[1] -= 30
+        document["main_cat"].clear
+        document["main_cat"] <= html.IMG(src='/images/3.png', width=87, height=87)
         document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
         main_cat_position[1] += 30
-        time.sleep(0.2)
+        #time.sleep(0.2)
         document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
-
+        document["main_cat"].clear
+        document["main_cat"] <= html.IMG(src='/images/2.jpg', width=45, height=122)
 
 start_position = 50
 
