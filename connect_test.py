@@ -39,6 +39,13 @@ def array_string():
         out_string += ' | '
     return out_string
 
+
+moving = document["main_cat"]
+
+x = 15
+moving.style.transform = "translate({}px,0)".format(x)
+
+
 array = [0 for i in range (100)]
 
 position = [7]
