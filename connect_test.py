@@ -1,6 +1,6 @@
 from browser import document, alert
 
-global position = 1
+position = 1
 
 @document['button1'].bind('click')
 def change_plus(event):
@@ -29,6 +29,8 @@ def array_string():
     return out_string
 
 array = [0 for i in range (100)]
+
+position = 1
 
 out_string = array_string()
 
