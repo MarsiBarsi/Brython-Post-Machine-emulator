@@ -1,6 +1,5 @@
 from browser import document, alert
 
-position = 7
 
 @document['do_one'].bind('click')
 def do_one(event):
@@ -42,7 +41,7 @@ def array_string():
 
 array = [0 for i in range (100)]
 
-position = 1
+position = 7
 
 out_string = array_string()
 
