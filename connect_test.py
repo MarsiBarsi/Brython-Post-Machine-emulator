@@ -1,5 +1,7 @@
 from browser import document, alert
 
+global position = 1
+
 @document['button1'].bind('click')
 def change_plus(event):
     array[position] += 1
@@ -30,7 +32,6 @@ array = [0 for i in range (100)]
 
 out_string = array_string()
 
-position = 1
 
 
 document["zone15"] <= out_string
