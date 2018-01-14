@@ -18,13 +18,13 @@ def do_null(event):
 @document['right'].bind('click')
 def right(event):
     position[0] += 1
-    document["main_cat"].style.transform = "translate({}px,0)".format((position[0]-7-start_position)*46)
+    main_cat_moving('right')
     refresh()
 
 @document['left'].bind('click')
 def left(event):
     position[0] -= 1
-    document["main_cat"].style.transform = "translate({}px,0)".format((position[0]-7-start_position)*46)
+    main_cat_moving('left')
     refresh()
 
 @document['end_of_program'].bind('click')
@@ -42,7 +42,18 @@ def array_string():
         out_string += ' | '
     return out_string
 
+def main_cat_moving(action):
+    if action == 'right':
+        main_cat_position[0] += 46
+        document["main_cat"].style.transform = "translate({}px,0)".format(main_cat_position[0])
+
+    if action == 'left':
+        main_cat_position[0] -= 46
+        document["main_cat"].style.transform = "translate({}px,0)".format(main_cat_position[0])
+
 start_position = 50
+
+main_cat_position = [0,0,0]
 
 band = [0 for i in range (100)]
 
