@@ -1,22 +1,35 @@
 from browser import document, alert
 
-position = 1
+position = 7
 
-@document['button1'].bind('click')
-def change_plus(event):
-    array[position] += 1
+@document['do_one'].bind('click')
+def do_one(event):
+    if array[position] == 0:
+        array[position] = 1
+        refresh()
 
-@document['button2'].bind('click')
-def change_pos(event):
+
+@document['do_null'].bind('click')
+def do_null(event):
+    if array[position] == 1:
+        array[position] = 0
+        refresh()
+
+@document['right'].bind('click')
+def right(event):
     position += 1
+    refresh()
 
+@document['left'].bind('click')
+def left(event):
+    position -= 1
+    refresh()
 
-@document['button3'].bind('click')
-def change_minus(event):
-    array[position] -= 1
+@document['end_of_program'].bind('click')
+def end_of_program(event):
+    document["zone15"].textContent = 'done'
 
-@document["mybutton"].bind("click")
-def echo(ev):
+def refresh():
     out_string = array_string()
     document["zone15"].textContent = out_string
 
