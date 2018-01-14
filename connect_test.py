@@ -18,13 +18,13 @@ def do_null(event):
 @document['right'].bind('click')
 def right(event):
     position[0] += 1
-    document["main_cat"].style.transform = "translate({}px,0)".format((position[0]-7)*46)
+    document["main_cat"].style.transform = "translate({}px,0)".format((position[0]-7-start_position)*46)
     refresh()
 
 @document['left'].bind('click')
 def left(event):
     position[0] -= 1
-    document["main_cat"].style.transform = "translate({}px,0)".format((position[0]-7)*46)
+    document["main_cat"].style.transform = "translate({}px,0)".format((position[0]-7-start_position)*46)
     refresh()
 
 @document['end_of_program'].bind('click')
