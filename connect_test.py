@@ -33,7 +33,7 @@ def refresh():
     document["zone15"].textContent = out_string
 
 def array_string():
-    out_string = '| '
+    out_string = ' | '
     for i in range (15):
         out_string += str(array[i])
         out_string += ' | '
