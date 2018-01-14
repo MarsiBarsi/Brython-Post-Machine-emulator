@@ -1,5 +1,5 @@
 from browser import document, alert
-
+import time
 
 
 @document['do_one'].bind('click')
@@ -57,6 +57,7 @@ def main_cat_moving(action):
         main_cat_position[1] -= 30
         document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
         main_cat_position[1] += 30
+        time.sleep(0.2)
         document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
 
 
