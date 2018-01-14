@@ -1,5 +1,6 @@
 from browser import document, alert
 
+moving = document["main_cat"]
 
 @document['do_one'].bind('click')
 def do_one(event):
@@ -17,11 +18,13 @@ def do_null(event):
 @document['right'].bind('click')
 def right(event):
     position[0] += 1
+    moving.style.transform = "translate({}px,0)".format((position[0]-7)*48)
     refresh()
 
 @document['left'].bind('click')
 def left(event):
     position[0] -= 1
+    moving.style.transform = "translate({}px,0)".format((position[0]-7)*48)
     refresh()
 
 @document['end_of_program'].bind('click')
@@ -39,11 +42,6 @@ def array_string():
         out_string += ' | '
     return out_string
 
-
-moving = document["main_cat"]
-
-x = 15
-moving.style.transform = "translate({}px,0)".format(x)
 
 
 array = [0 for i in range (100)]
