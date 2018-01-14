@@ -3,25 +3,25 @@ from browser import document, alert
 
 @document['do_one'].bind('click')
 def do_one(event):
-    if array[position] == 0:
-        array[position] = 1
+    if array[position[0]] == 0:
+        array[position[0]] = 1
         refresh()
 
 
 @document['do_null'].bind('click')
 def do_null(event):
-    if array[position] == 1:
-        array[position] = 0
+    if array[position[0]] == 1:
+        array[position[0]] = 0
         refresh()
 
 @document['right'].bind('click')
 def right(event):
-    position += 1
+    position[0] += 1
     refresh()
 
 @document['left'].bind('click')
 def left(event):
-    position -= 1
+    position[0] -= 1
     refresh()
 
 @document['end_of_program'].bind('click')
@@ -41,7 +41,7 @@ def array_string():
 
 array = [0 for i in range (100)]
 
-position = 7
+position = [7]
 
 out_string = array_string()
 
