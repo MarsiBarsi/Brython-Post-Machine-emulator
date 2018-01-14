@@ -1,15 +1,16 @@
 from browser import document, alert
 
 @document['button1'].bind('click')
-def change(event):
+def change_plus(event):
     array[position] += 1
 
 @document['button2'].bind('click')
-def change(event):
+def change_pos(event):
     position += 1
 
+
 @document['button3'].bind('click')
-def change(event):
+def change_minus(event):
     array[position] -= 1
 
 @document["mybutton"].bind("click")
@@ -22,6 +23,7 @@ def array_string():
     for i in range (15):
         out_string += str(array[i])
         out_string += ' | '
+        out_string += str(position)
     return out_string
 
 array = [0 for i in range (100)]
