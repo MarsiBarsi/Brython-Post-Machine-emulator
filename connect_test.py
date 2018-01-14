@@ -6,6 +6,7 @@ from browser import document, alert
 def do_one(event):
     if band[position[0]] == 0:
         band[position[0]] = 1
+        main_cat_moving('up')
         refresh()
 
 
@@ -13,6 +14,7 @@ def do_one(event):
 def do_null(event):
     if band[position[0]] == 1:
         band[position[0]] = 0
+        main_cat_moving('up')
         refresh()
 
 @document['right'].bind('click')
@@ -50,6 +52,11 @@ def main_cat_moving(action):
     if action == 'left':
         main_cat_position[0] -= 46
         document["main_cat"].style.transform = "translate({}px,0)".format(main_cat_position[0])
+
+    if action == 'up':
+        main_cat_position[1] -= 30
+        document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
+        main_cat_position[1] += 30
 
 start_position = 50
 
