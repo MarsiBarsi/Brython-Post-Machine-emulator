@@ -38,7 +38,6 @@ def array_string():
     for i in range (15):
         out_string += str(array[i])
         out_string += ' | '
-    out_string += str(position)
     return out_string
 
 array = [0 for i in range (100)]
@@ -47,6 +46,4 @@ position = 1
 
 out_string = array_string()
 
-
-
-document["zone15"] <= out_string
+document["zone15"].textContent = out_string
