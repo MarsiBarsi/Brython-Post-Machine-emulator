@@ -18,6 +18,7 @@ def do_one(event):
         band[position[0]] = 1
         main_cat_moving('up')
         refresh()
+        document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
 
 
 @document['do_null'].bind('click')
@@ -26,6 +27,7 @@ def do_null(event):
         band[position[0]] = 0
         main_cat_moving('up')
         refresh()
+        document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
 
 @document['right'].bind('click')
 def right(event):
