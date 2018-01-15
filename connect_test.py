@@ -64,15 +64,9 @@ def main_cat_moving(action):
         document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
 
     if action == 'up':
-        main_cat_position[1] -= 30
-        document["main_cat"].style.transform = '''
-        @keyframes move {
-            50% {
-            transform: translate({}px, {}px);
-            }
-              top: {}px;
-                    '''.format(main_cat_position[0],main_cat_position[1],main_cat_position[1]+30)
-        main_cat_position[1] += 30
+        #main_cat_position[1] -= 30
+        document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1],main_cat_position[1]+30)
+        #main_cat_position[1] += 30
 
 start_position = [50]
 
