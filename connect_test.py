@@ -65,10 +65,7 @@ def main_cat_moving(action):
 
     if action == 'up':
         #main_cat_position[1] -= 30
-        document.style.transform = '''@keyframes move {
-             50% {
-             transform: translate({}px, -30px);
-          }'''.format(main_cat_position[0])
+        document["main_cat"].style.transform = "animation: move 0.5s ease-in-out;")
         #main_cat_position[1] += 30
 
 start_position = [50]
