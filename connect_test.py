@@ -1,6 +1,18 @@
 from browser import document, alert
 
 
+@document['button_band_left'].bind('click')
+def button_band_left(event):
+    start_position[0] -= 1
+    main_cat_moving('right')
+    refresh()
+
+@document['button_band_right'].bind('click')
+def button_band_right(event):
+    start_position[0] += 1
+    main_cat_moving('left')
+    refresh()
+
 @document['do_one'].bind('click')
 def do_one(event):
     if band[position[0]] == 0:
@@ -38,7 +50,7 @@ def refresh():
 
 def array_string():
     out_string = ' | '
-    for i in range (start_position,start_position+15):
+    for i in range (start_position,start_position[0]+15):
         out_string += str(band[i])
         out_string += ' | '
     return out_string
@@ -58,14 +70,14 @@ def main_cat_moving(action):
         main_cat_position[1] += 30
         document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
 
-start_position = 50
+start_position = [50]
 
 main_cat_position = [0,-15,0]
 document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
 
 band = [0 for i in range (100)]
 
-position = [(start_position+7)]
+position = [(start_position[0]+7)]
 
 out_string = array_string()
 
