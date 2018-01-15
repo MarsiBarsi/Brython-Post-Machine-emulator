@@ -1,5 +1,6 @@
 from browser import document, alert
 
+
 @document['button_band_left'].bind('click')
 def button_band_left(event):
     start_position[0] -= 1
@@ -18,7 +19,6 @@ def do_one(event):
         band[position[0]] = 1
         main_cat_moving('up')
         refresh()
-        document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
 
 
 @document['do_null'].bind('click')
@@ -27,7 +27,6 @@ def do_null(event):
         band[position[0]] = 0
         main_cat_moving('up')
         refresh()
-        document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
 
 @document['right'].bind('click')
 def right(event):
@@ -66,9 +65,9 @@ def main_cat_moving(action):
         document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
 
     if action == 'up':
-        main_cat_position[1] -= 30
-        document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
-        main_cat_position[1] += 30
+        #main_cat_position[1] -= 30
+        document["main_cat"].style.transform = "translateY({}px)".format(main_cat_position[1])
+        #main_cat_position[1] += 30
 
 start_position = [50]
 
