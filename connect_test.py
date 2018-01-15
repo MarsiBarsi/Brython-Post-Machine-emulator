@@ -55,18 +55,19 @@ def main_cat_moving(action):
 
     if action == 'up':
         main_cat_position[1] -= 30
-        document["main_cat"].clear
-        document["main_cat"].html.IMG(src="/images/3.png", width=35, height=122)
+        #document["main_cat"].clear
+        #document["main_cat"].html.IMG(src="/images/3.png", width=35, height=122)
         document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
         main_cat_position[1] += 30
         time.sleep(0.2)
         document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
-        document["main_cat"].clear
-        document["main_cat"] <= html.IMG(src="/images/2.jpg", width=87, height=87)
+        #document["main_cat"].clear
+        #document["main_cat"] <= html.IMG(src="/images/2.jpg", width=87, height=87)
 
 start_position = 50
 
-main_cat_position = [0,0,0]
+main_cat_position = [0,-15,0]
+document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
 
 band = [0 for i in range (100)]
 
