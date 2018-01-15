@@ -47,13 +47,13 @@ def main_cat_moving(action):
     if action == 'right':
         #main_cat_position[0] += 46
         for i in range(1,46):
-            document["main_cat"].style.transform = "translate({}px,0)".format(main_cat_position[0]+i)
+            document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0]+i,main_cat_position[1])
         main_cat_position[0] += 46
 
     if action == 'left':
         #main_cat_position[0] -= 46
         for i in range(1,46):
-            document["main_cat"].style.transform = "translate({}px,0)".format(main_cat_position[0]-i)
+            document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0]-i,main_cat_position[1])
         main_cat_position[0] -= 46
 
     if action == 'up':
