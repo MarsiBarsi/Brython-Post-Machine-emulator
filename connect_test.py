@@ -1,5 +1,4 @@
 from browser import document, alert
-import time
 
 
 @document['do_one'].bind('click')
@@ -46,23 +45,25 @@ def array_string():
 
 def main_cat_moving(action):
     if action == 'right':
+        #main_cat_position[0] += 46
+        for i in range(1,46):
+            document["main_cat"].style.transform = "translate({}px,0)".format(main_cat_position[0]+i)
         main_cat_position[0] += 46
-        document["main_cat"].style.transform = "translate({}px,0)".format(main_cat_position[0])
 
     if action == 'left':
+        #main_cat_position[0] -= 46
+        for i in range(1,46):
+            document["main_cat"].style.transform = "translate({}px,0)".format(main_cat_position[0]-i)
         main_cat_position[0] -= 46
-        document["main_cat"].style.transform = "translate({}px,0)".format(main_cat_position[0])
 
     if action == 'up':
+        for i in range (1,30):
+            document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1]-i)
         main_cat_position[1] -= 30
-        #document["main_cat"].clear
-        #document["main_cat"].html.IMG(src="/images/3.png", width=35, height=122)
-        document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
+
+        for i in range (1,30):
+            document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1]+i)
         main_cat_position[1] += 30
-        time.sleep(0.2)
-        document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
-        #document["main_cat"].clear
-        #document["main_cat"] <= html.IMG(src="/images/2.jpg", width=87, height=87)
 
 start_position = 50
 
