@@ -1,5 +1,5 @@
 from browser import document, alert
-
+import time
 
 @document['button_band_left'].bind('click')
 def button_band_left(event):
@@ -67,8 +67,12 @@ def main_cat_moving(action):
     if action == 'up':
         main_cat_position[1] -= 30
         document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
+        time.sleep(0.2)
+        refresh()
+        time.sleep(0.3)
         main_cat_position[1] += 30
         document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
+
 
 start_position = [50]
 
