@@ -50,7 +50,7 @@ def refresh():
 
 def array_string():
     out_string = ' | '
-    for i in range (start_positionх[0],start_position[0]+15):
+    for i in range (start_position[0],start_position[0]+15):
         out_string += str(band[i])
         out_string += ' | '
     return out_string
