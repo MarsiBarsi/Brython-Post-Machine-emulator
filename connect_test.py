@@ -65,7 +65,7 @@ def main_cat_moving(action):
 
     if action == 'up':
         main_cat_position[1] -= 30
-        document["main_cat"].style.transform = "translateY({}px)".format(main_cat_position[1])
+        document["main_cat"].style.transform = "animation: move 0.5s ease".format(main_cat_position[1])
         main_cat_position[1] += 30
 
 start_position = [50]
