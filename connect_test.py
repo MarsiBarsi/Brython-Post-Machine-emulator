@@ -64,9 +64,13 @@ def main_cat_moving(action):
         document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
 
     if action == 'up':
-        #main_cat_position[1] -= 30
-        document["main_cat"].style.transform = "animation: move 0.5s ease".format(main_cat_position[1])
-        #main_cat_position[1] += 30
+        for i in range (1,30):
+            main_cat_position[1] -= 1
+            document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
+        refresh()
+        for i in range (1,30):
+            main_cat_position[1] += 1
+            document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
 
 start_position = [50]
 
