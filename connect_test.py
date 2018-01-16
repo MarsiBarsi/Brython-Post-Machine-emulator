@@ -47,6 +47,19 @@ def refresh():
     out_string = array_string()
     document["band"].textContent = out_string
 
+def check_visibility():
+    if -323 < main_cat_position[0] < 323: #in band
+        return 1
+    else:
+        return 0
+
+def print_cat_moving():
+    if check_visibility() == 1:
+        document["main_cat"].style.transform = "visibility: visible"
+        document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
+    else:
+        document["main_cat"].style.transform = "visibility: hidden"
+
 def array_string():
     out_string = ' | '
     for i in range (start_position[0],start_position[0]+15):
@@ -57,12 +70,12 @@ def array_string():
 def main_cat_moving(action):
     if action == 'right':
         main_cat_position[0] += 46
-        document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
+        print_cat_moving()
 
     if action == 'left':
         main_cat_position[0] -= 46
-        document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
-
+        print_cat_moving()
+        
     if action == 'up':
         for i in range (1,30):
             main_cat_position[1] -= 1
@@ -72,9 +85,10 @@ def main_cat_moving(action):
             main_cat_position[1] += 1
             document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
 
+
 start_position = [50]
 
-main_cat_position = [0,-15,0]
+main_cat_position = [0,-15,1] #x,y from center; third parametr is visibility
 document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
 
 band = [0 for i in range (100)]
