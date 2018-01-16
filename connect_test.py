@@ -55,10 +55,9 @@ def check_visibility():
 
 def print_cat_moving():
     if check_visibility() == 1:
-        document["main_cat"].style.transform = "visibility: visible"
         document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
     else:
-        document["main_cat"].style.transform = "visibility: hidden"
+        document["main_cat"].style.transform = "translate({}px,{}px)".format(9999,9999) #invisible
 
 def array_string():
     out_string = ' | '
@@ -75,7 +74,7 @@ def main_cat_moving(action):
     if action == 'left':
         main_cat_position[0] -= 46
         print_cat_moving()
-        
+
     if action == 'up':
         for i in range (1,30):
             main_cat_position[1] -= 1
