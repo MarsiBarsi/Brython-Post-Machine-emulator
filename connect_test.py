@@ -85,15 +85,33 @@ def main_cat_moving(action):
             document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
 
 
-start_position = [50]
+#-----------initialization-----------
+#---------Band:----------
+band_size = 100
 
-main_cat_position = [0,-15,1] #x,y from center; third parametr is visibility
-document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
+band = [0 for i in range (band_size)] #band of post machine
+start_position = [(band_size/2)] #center of the band
 
-band = [0 for i in range (100)]
+#----cat:---------------
+position = [(start_position[0]+7)] #coordinate of cat in center of band
 
-position = [(start_position[0]+7)]
+main_cat_position = [0,-15,1] #x,y position of cat from center; third parametr is visibility
 
-out_string = array_string()
+#-----commands:----------
+# list of commands consists of comand-lists. every comand-list has three paramets
+# 0 - number of command; 1 - command; 2 - number of next command
+# codes of commands from post machine:
+# ← : 1
+# → : 2
+# V : 3
+# ↕ : 4
+# ? : 5
+# ! : 6
+commands = [ [0,0,0] ] # format of commands list
 
-document["zone15"].textContent = out_string
+#---------start:----------
+out_string = array_string() #out_string is getting empty band
+
+document["band"].textContent = out_string #print band
+
+document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1]) #cat is ready
