@@ -89,7 +89,7 @@ def main_cat_moving(action):
 #---------Band:----------
 band_size = 100
 
-band = [0 for i in range (band_size)] #band of post machine
+band = [0 for i in range (1,band_size)] #band of post machine
 start_position = [(band_size/2)] #center of the band
 
 #----cat:---------------
