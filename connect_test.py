@@ -4,6 +4,10 @@ from browser import document, alert
 def button_band_left(event):
     start_position[0] -= 1
     main_cat_moving('right')
+    input = document["to_command"].value
+    document["commands"].textContent = input
+    document["to_command"].value = 10
+
     refresh()
 
 @document['button_band_right'].bind('click')
