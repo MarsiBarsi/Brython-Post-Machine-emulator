@@ -115,3 +115,5 @@ out_string = array_string() #out_string is getting empty band
 document["band"].textContent = out_string #print band
 
 document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1]) #cat is ready
+
+document["commands"].textContent = "здесь печатаются команды"
