@@ -90,11 +90,10 @@ def main_cat_moving(action):
             date  = window.Date.new()
             new_moment = date.getMilliseconds()
             if new_moment == ((moment + 500) % 1000):
+                refresh()
+                main_cat_position[1] += 30
+                document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
                 break;
-        refresh()
-
-        main_cat_position[1] += 30
-        document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
 
 
 #-----------initialization-----------
