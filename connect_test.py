@@ -82,10 +82,15 @@ def main_cat_moving(action):
     if action == 'up':
         main_cat_position[1] -= 30
         document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
+
         date  = window.Date.new()
         moment = date.getMilliseconds()
-        document["commands"].textContent = str(moment)
 
+        while(1):
+            date  = window.Date.new()
+            new_moment = date.getMilliseconds()
+            if new_moment == ((moment + 500) % 1000):
+                break;
         refresh()
 
         main_cat_position[1] += 30
