@@ -1,4 +1,4 @@
-from browser import document, alert
+from browser import document, alert, window
 
 @document['button_band_left'].bind('click')
 def button_band_left(event):
@@ -80,13 +80,16 @@ def main_cat_moving(action):
         print_cat_moving()
 
     if action == 'up':
-        for i in range (1,30):
-            main_cat_position[1] -= 1
-            document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
+        main_cat_position[1] -= 30
+        document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
+        date  = window.Date.new()
+        moment = date.getMilliseconds()
+        document["commands"].textContent = str(moment)
+
         refresh()
-        for i in range (1,30):
-            main_cat_position[1] += 1
-            document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
+
+        main_cat_position[1] += 30
+        document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
 
 
 #-----------initialization-----------
