@@ -4,8 +4,8 @@ from browser import document, alert, window
 def button_band_left(event):
     start_position[0] -= 1
     main_cat_moving('right')
-    input = document["to_command"].value
-    document["commands"].textContent = input
+    from_form = document["to_command"].value
+    document["commands"].textContent = str(from_form)
     document["to_command"].value = 10
 
     refresh()
