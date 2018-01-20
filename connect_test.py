@@ -7,7 +7,7 @@ def button_band_left(event):
     from_form = document["to_command"].value
     document["commands"].textContent = 'хмм' + str(from_form)
     document["to_command"].value = 10
-
+    document["commands"].textContent = 'test11'
     refresh()
 
 @document['button_band_right'].bind('click')
