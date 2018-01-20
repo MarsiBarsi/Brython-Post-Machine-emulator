@@ -1,4 +1,4 @@
-from browser import document, alert, window
+from browser import document, alert, window, html
 
 @document['button_band_left'].bind('click')
 def button_band_left(event):
