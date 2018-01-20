@@ -5,7 +5,7 @@ def button_band_left(event):
     start_position[0] -= 1
     main_cat_moving('right')
     from_form = document["to_command"].value
-    document["commands"].textContent = str(from_form)
+    document["commands"].textContent = 'хмм' + str(from_form)
     document["to_command"].value = 10
 
     refresh()
