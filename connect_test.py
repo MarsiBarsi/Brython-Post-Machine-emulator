@@ -54,7 +54,7 @@ def right(event):
 
 @document['left'].bind('click')
 def left(event):
-    commands.append([2,int(document["to_command"].value)])
+    commands.append([1,int(document["to_command"].value)])
 
     document["commands"].textContent += '|'+str(commands[executable_command[0]])+' |  '
 
