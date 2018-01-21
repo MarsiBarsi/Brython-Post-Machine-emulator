@@ -20,7 +20,7 @@ def button_band_right(event):
 @document['do_one'].bind('click')
 def do_one(event):
 
-    commands.append([3,document["to_command"].value])
+    commands.append([3,int(document["to_command"].value)])
 
     document["commands"].textContent += '|'+str(commands[executable_command[0]])+' |  '
 
@@ -64,7 +64,6 @@ def execute():
                 band[position[0]] = 1
                 main_cat_moving('up')
                 refresh()
-
 
         executable_command[0] = commands[executable_command[0]][1]
 
