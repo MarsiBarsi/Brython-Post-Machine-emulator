@@ -19,6 +19,8 @@ def button_band_right(event):
 
 @document['do_one'].bind('click')
 def do_one(event):
+
+    #commands.append([])
     if band[position[0]] == 0:
         band[position[0]] = 1
         main_cat_moving('up')
@@ -43,8 +45,7 @@ def left(event):
     position[0] -= 1
     main_cat_moving('left')
     refresh()
-    from_form = document["to_command"].value
-    document["commands"].textContent = document["commands"].textContent + str(from_form)
+    document["commands"].textContent = document["commands"].textContent + ' it works ' +str(document["to_command"].value)
     document["to_command"].value = 10
 
 @document['end_of_program'].bind('click')
@@ -53,6 +54,7 @@ def end_of_program(event):
 
 #-----
 #-----functions:
+
 
 def refresh():
     out_string = array_string()
@@ -89,18 +91,9 @@ def main_cat_moving(action):
     if action == 'up':
         main_cat_position[1] -= 30
         print_cat_moving()
-
-        date  = window.Date.new()
-        moment = date.getMilliseconds()
-
-        while(1):
-            date  = window.Date.new()
-            new_moment = date.getMilliseconds()
-            if new_moment == ((moment + 500) % 1000):
-                refresh()
-                main_cat_position[1] += 30
-                print_cat_moving()
-                break;
+        refresh()
+        main_cat_position[1] += 30
+        print_cat_moving()
 
 
 #-----------initialization-----------
@@ -117,7 +110,7 @@ main_cat_position = [0,-15,1] #x,y position of cat from center; third parametr i
 
 #-----commands:----------
 # list of commands consists of comand-lists. every comand-list has three paramets
-# 0 - number of command; 1 - command; 2 - number of next command
+# 0 - command; 1 - number of next command
 # codes of commands from post machine:
 # ← : 1
 # → : 2
@@ -125,7 +118,8 @@ main_cat_position = [0,-15,1] #x,y position of cat from center; third parametr i
 # ↕ : 4
 # ? : 5
 # ! : 6
-commands = [ [0,0,0] ] # format of commands list
+commands = [ [0,0] ] # format of commands list
+executable_command = [1]
 
 #---------start:----------
 out_string = array_string() #out_string is getting empty band
