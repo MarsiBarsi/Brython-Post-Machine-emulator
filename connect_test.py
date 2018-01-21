@@ -38,10 +38,6 @@ def do_null(event):
     document["to_command"].value = executable_command[1]
     execute()
 
-    if band[position[0]] == 1:
-        band[position[0]] = 0
-        main_cat_moving('up')
-        refresh()
 
 @document['right'].bind('click')
 def right(event):
