@@ -80,7 +80,7 @@ def main_cat_moving(action):
 
     if action == 'up':
         main_cat_position[1] -= 30
-        document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
+        print_cat_moving()
 
         date  = window.Date.new()
         moment = date.getMilliseconds()
@@ -91,7 +91,7 @@ def main_cat_moving(action):
             if new_moment == ((moment + 500) % 1000):
                 refresh()
                 main_cat_position[1] += 30
-                document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
+                print_cat_moving()
                 break;
 
 
