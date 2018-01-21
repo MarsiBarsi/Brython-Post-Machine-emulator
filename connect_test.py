@@ -21,12 +21,13 @@ def button_band_right(event):
 def do_one(event):
 
     commands.append([3,document["to_command"].value])
-    document["to_command"].value = document["to_command"].value + 1
 
-    if band[position[0]] == 0:
-        band[position[0]] = 1
-        main_cat_moving('up')
-        refresh()
+    document["commands"].textContent += '|'+str(commands[executable_command[0]])+' |  '
+
+    executable_command[1] += 1
+    document["to_command"].value = executable_command[1]
+    execute()
+
 
 
 @document['do_null'].bind('click')
@@ -47,8 +48,6 @@ def left(event):
     position[0] -= 1
     main_cat_moving('left')
     refresh()
-    document["commands"].textContent += ' it works part 2' +str(document["to_command"].value)
-    document["to_command"].value = 10
 
 @document['end_of_program'].bind('click')
 def end_of_program(event):
@@ -56,7 +55,23 @@ def end_of_program(event):
 
 #-----
 #-----functions:
+def execute():
+    endless_catcher = 0
+    while executable_command[0] < executable_command[1]:
 
+        if commands[executable_command[0]][0] == 3:
+            if band[position[0]] == 0:
+                band[position[0]] = 1
+                main_cat_moving('up')
+                refresh()
+
+
+        executable_command[0] = commands[executable_command[0]][1]
+
+        endless_catcher += 1
+        if endless_catcher > 1000:
+            document["band"].textContent = 'бесконечный цикл'
+            break;
 
 def refresh():
     out_string = array_string()
@@ -121,7 +136,7 @@ main_cat_position = [0,-15,1] #x,y position of cat from center; third parametr i
 # ? : 5
 # ! : 6
 commands = [ [0,0] ] # format of commands list
-executable_command = [1]
+executable_command = [1,1] # 0 - to execute at the moment; 1 - last command
 
 #---------start:----------
 out_string = array_string() #out_string is getting empty band
