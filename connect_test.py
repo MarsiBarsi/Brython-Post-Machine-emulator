@@ -2,9 +2,6 @@ from browser import document, alert, window, html
 
 @document['button_band_left'].bind('click')
 def button_band_left(event):
-    from_form = document["to_command"].value
-    document["commands"].textContent = 'хмм' + str(from_form)
-    document["to_command"].value = 10
     start_position[0] -= 1
     main_cat_moving('right')
     refresh()
@@ -41,7 +38,10 @@ def left(event):
     position[0] -= 1
     main_cat_moving('left')
     refresh()
-
+    from_form = document["to_command"].value
+    document["commands"].textContent = 'хмм' + str(from_form)
+    document["to_command"].value = 10
+    
 @document['end_of_program'].bind('click')
 def end_of_program(event):
     document["band"].textContent = 'done'
