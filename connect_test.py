@@ -21,6 +21,7 @@ def button_band_right(event):
 def do_one(event):
 
     commands.append([3,int(document["to_command"].value)])
+
     document["commands"].textContent += '|'+str(commands[executable_command[0]])+' |  '
 
     executable_command[1] += 1
@@ -32,6 +33,7 @@ def do_one(event):
 @document['do_null'].bind('click')
 def do_null(event):
     commands.append([4,int(document["to_command"].value)])
+
     document["commands"].textContent += '|'+str(commands[executable_command[0]])+' |  '
 
     executable_command[1] += 1
@@ -41,15 +43,25 @@ def do_null(event):
 
 @document['right'].bind('click')
 def right(event):
-    position[0] += 1
-    main_cat_moving('right')
-    refresh()
+    commands.append([2,int(document["to_command"].value)])
+
+    document["commands"].textContent += '|'+str(commands[executable_command[0]])+' |  '
+
+    executable_command[1] += 1
+    document["to_command"].value = executable_command[1]
+    execute()
+
 
 @document['left'].bind('click')
 def left(event):
-    position[0] -= 1
-    main_cat_moving('left')
-    refresh()
+    commands.append([2,int(document["to_command"].value)])
+
+    document["commands"].textContent += '|'+str(commands[executable_command[0]])+' |  '
+
+    executable_command[1] += 1
+    document["to_command"].value = executable_command[1]
+    execute()
+
 
 @document['end_of_program'].bind('click')
 def end_of_program(event):
@@ -60,6 +72,16 @@ def end_of_program(event):
 def execute():
     endless_catcher = 0
     while executable_command[0] < executable_command[1]:
+
+        if commands[executable_command[0]][0] == 1:
+            position[0] -= 1
+            main_cat_moving('left')
+            refresh()
+
+        if commands[executable_command[0]][0] == 2:
+            position[0] += 1
+            main_cat_moving('right')
+            refresh()
 
         if commands[executable_command[0]][0] == 3:
             if band[position[0]] == 0:
@@ -72,6 +94,7 @@ def execute():
                 band[position[0]] = 0
                 main_cat_moving('up')
                 refresh()
+
 
 
 
