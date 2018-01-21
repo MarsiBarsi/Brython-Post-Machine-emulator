@@ -21,7 +21,7 @@ def button_band_right(event):
 def do_one(event):
 
     commands.append([3,int(document["to_command"].value)])
-
+    alert(str(int(document["to_command"].value)))
     document["commands"].textContent += '|'+str(commands[executable_command[0]])+' |  '
 
     executable_command[1] += 1
