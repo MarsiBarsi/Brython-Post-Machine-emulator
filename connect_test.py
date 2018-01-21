@@ -66,7 +66,7 @@ def execute():
                 refresh()
 
         executable_command[0] = commands[executable_command[0]][1]
-
+        alert(str(executable_command))
         endless_catcher += 1
         if endless_catcher > 1000:
             document["band"].textContent = 'бесконечный цикл'
