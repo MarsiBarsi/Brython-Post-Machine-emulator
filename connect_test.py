@@ -1,5 +1,7 @@
 from browser import document, alert, window, html
 
+#----band moving:
+
 @document['button_band_left'].bind('click')
 def button_band_left(event):
     start_position[0] -= 1
@@ -11,6 +13,9 @@ def button_band_right(event):
     start_position[0] += 1
     main_cat_moving('left')
     refresh()
+
+
+#----commands:
 
 @document['do_one'].bind('click')
 def do_one(event):
@@ -39,12 +44,15 @@ def left(event):
     main_cat_moving('left')
     refresh()
     from_form = document["to_command"].value
-    document["commands"].textContent = 'хмм' + str(from_form)
+    document["commands"].textContent = document["commands"].textContent + str(from_form)
     document["to_command"].value = 10
-    
+
 @document['end_of_program'].bind('click')
 def end_of_program(event):
     document["band"].textContent = 'done'
+
+#-----
+#-----functions:
 
 def refresh():
     out_string = array_string()
