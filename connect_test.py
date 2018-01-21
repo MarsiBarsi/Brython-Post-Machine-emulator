@@ -21,7 +21,6 @@ def button_band_right(event):
 def do_one(event):
 
     commands.append([3,int(document["to_command"].value)])
-    alert(str(int(document["to_command"].value)))
     document["commands"].textContent += '|'+str(commands[executable_command[0]])+' |  '
 
     executable_command[1] += 1
@@ -32,6 +31,13 @@ def do_one(event):
 
 @document['do_null'].bind('click')
 def do_null(event):
+    commands.append([4,int(document["to_command"].value)])
+    document["commands"].textContent += '|'+str(commands[executable_command[0]])+' |  '
+
+    executable_command[1] += 1
+    document["to_command"].value = executable_command[1]
+    execute()
+
     if band[position[0]] == 1:
         band[position[0]] = 0
         main_cat_moving('up')
@@ -65,8 +71,15 @@ def execute():
                 main_cat_moving('up')
                 refresh()
 
+        if commands[executable_command[0]][0] == 4:
+            if band[position[0]] == 1:
+                band[position[0]] = 0
+                main_cat_moving('up')
+                refresh()
+
+
+
         executable_command[0] = commands[executable_command[0]][1]
-        alert(str(executable_command))
         endless_catcher += 1
         if endless_catcher > 1000:
             document["band"].textContent = 'бесконечный цикл'
