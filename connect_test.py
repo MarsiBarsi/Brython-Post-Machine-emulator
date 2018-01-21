@@ -2,6 +2,9 @@ from browser import document, alert, window, html
 
 @document['button_band_left'].bind('click')
 def button_band_left(event):
+    from_form = document["to_command"].value
+    document["commands"].textContent = 'хмм' + str(from_form)
+    document["to_command"].value = 10
     start_position[0] -= 1
     main_cat_moving('right')
     refresh()
@@ -124,6 +127,3 @@ document["band"].textContent = out_string #print band
 document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1]) #cat is ready
 
 document["commands"].textContent = "здесь печатаются команды"
-from_form = document["to_command"].value
-document["commands"].textContent = 'хмм' + str(from_form)
-document["to_command"].value = 10
