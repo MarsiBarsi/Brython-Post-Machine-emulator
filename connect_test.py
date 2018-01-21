@@ -127,4 +127,3 @@ document["commands"].textContent = "здесь печатаются команд
 from_form = document["to_command"].value
 document["commands"].textContent = 'хмм' + str(from_form)
 document["to_command"].value = 10
-document["commands"].textContent = 'test11'
