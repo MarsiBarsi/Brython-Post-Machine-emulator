@@ -135,7 +135,7 @@ main_cat_position = [0,-15,1] #x,y position of cat from center; third parametr i
 # ? : 5
 # ! : 6
 commands = [ [0,0] ] # format of commands list
-executable_command = [1,1] # 0 - to execute at the moment; 1 - last command
+executable_command = [1,2] # 0 - to execute at the moment; 1 - last command
 
 #---------start:----------
 out_string = array_string() #out_string is getting empty band
