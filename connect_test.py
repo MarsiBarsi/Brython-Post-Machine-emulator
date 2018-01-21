@@ -20,7 +20,9 @@ def button_band_right(event):
 @document['do_one'].bind('click')
 def do_one(event):
 
-    #commands.append([])
+    commands.append([3,document["to_command"].value])
+    document["to_command"].value = document["to_command"].value + 1
+
     if band[position[0]] == 0:
         band[position[0]] = 1
         main_cat_moving('up')
@@ -45,7 +47,7 @@ def left(event):
     position[0] -= 1
     main_cat_moving('left')
     refresh()
-    document["commands"].textContent = document["commands"].textContent + ' it works ' +str(document["to_command"].value)
+    document["commands"].textContent += ' it works part 2' +str(document["to_command"].value)
     document["to_command"].value = 10
 
 @document['end_of_program'].bind('click')
