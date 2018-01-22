@@ -113,10 +113,15 @@ def execute():
                 refresh()
 
         if commands[executable_command[0]][0] == 5:
-            if band[position[0]] == 1:
-                refresh()
             if band[position[0]] == 0:
-                refresh()
+                executable_command[0] = commands[executable_command[0]][1]
+                endless_catcher += 1
+                continue;
+
+            if band[position[0]] == 1:
+                executable_command[0] = commands[executable_command[0]][2]
+                endless_catcher += 1
+                continue;
 
         executable_command[0] = commands[executable_command[0]][1]
         endless_catcher += 1
