@@ -22,10 +22,10 @@ def do_one(event):
 
     commands.append([3,int(document["to_command"].value)])
 
-    print_new_command()
-
     executable_command[1] += 1
     document["to_command"].value = executable_command[1]
+
+    print_new_command()
     execute()
 
 
@@ -34,10 +34,10 @@ def do_one(event):
 def do_null(event):
     commands.append([4,int(document["to_command"].value)])
 
-    print_new_command()
-
     executable_command[1] += 1
     document["to_command"].value = executable_command[1]
+
+    print_new_command()
     execute()
 
 
@@ -45,10 +45,10 @@ def do_null(event):
 def right(event):
     commands.append([2,int(document["to_command"].value)])
 
-    print_new_command()
-
     executable_command[1] += 1
     document["to_command"].value = executable_command[1]
+
+    print_new_command()
     execute()
 
 
@@ -56,10 +56,10 @@ def right(event):
 def left(event):
     commands.append([1,int(document["to_command"].value)])
 
-    print_new_command()
-
     executable_command[1] += 1
     document["to_command"].value = executable_command[1]
+
+    print_new_command()
     execute()
 
 
