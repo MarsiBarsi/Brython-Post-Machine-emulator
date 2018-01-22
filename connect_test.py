@@ -109,7 +109,7 @@ def execute():
             break;
 
 def print_new_command():
-    new_command_string = str(executable_command[1])
+    new_command_string = str(executable_command[0])
 
     if commands[executable_command[0]][0] == 1:
         new_command_string += ' ← '
