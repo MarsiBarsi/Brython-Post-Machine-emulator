@@ -22,7 +22,7 @@ def do_one(event):
 
     commands.append([3,int(document["to_command"].value)])
 
-    document["commands"].textContent += '|'+str(commands[executable_command[0]])+' |  '
+    print_new_command()
 
     executable_command[1] += 1
     document["to_command"].value = executable_command[1]
@@ -34,7 +34,7 @@ def do_one(event):
 def do_null(event):
     commands.append([4,int(document["to_command"].value)])
 
-    document["commands"].textContent += '|'+str(commands[executable_command[0]])+' |  '
+    print_new_command()
 
     executable_command[1] += 1
     document["to_command"].value = executable_command[1]
@@ -45,7 +45,7 @@ def do_null(event):
 def right(event):
     commands.append([2,int(document["to_command"].value)])
 
-    document["commands"].textContent += '|'+str(commands[executable_command[0]])+' |  '
+    print_new_command()
 
     executable_command[1] += 1
     document["to_command"].value = executable_command[1]
@@ -56,7 +56,7 @@ def right(event):
 def left(event):
     commands.append([1,int(document["to_command"].value)])
 
-    document["commands"].textContent += '|'+str(commands[executable_command[0]])+' |  '
+    print_new_command()
 
     executable_command[1] += 1
     document["to_command"].value = executable_command[1]
@@ -66,6 +66,11 @@ def left(event):
 @document['end_of_program'].bind('click')
 def end_of_program(event):
     document["band"].textContent = 'done'
+
+    commands.append([6,''])
+
+    print_new_command()
+
 
 #-----
 #-----functions:
@@ -96,13 +101,36 @@ def execute():
                 refresh()
 
 
-
-
         executable_command[0] = commands[executable_command[0]][1]
         endless_catcher += 1
         if endless_catcher > 1000:
-            document["band"].textContent = 'бесконечный цикл'
+            document["band"].textContent = 'endless cycle :('
             break;
+
+def print_new_command():
+    new_command_string = str(executable_command[1])
+
+    if commands[executable_command[0]][0] == 1:
+        new_command_string += ' ← '
+
+    if commands[executable_command[0]][0] == 2:
+        new_command_string += ' → '
+
+    if commands[executable_command[0]][0] == 3:
+        new_command_string += ' V '
+
+    if commands[executable_command[0]][0] == 4:
+        new_command_string += ' ↕ '
+
+    if commands[executable_command[0]][0] == 5:
+        new_command_string += ' ? '
+
+    if commands[executable_command[0]][0] == 6:
+        new_command_string += ' ! '
+
+    new_command_string += str(commands[executable_command[0]][1])+' | '
+    document["commands"].textContent += new_command_string
+
 
 def refresh():
     out_string = array_string()
@@ -176,4 +204,4 @@ document["band"].textContent = out_string #print band
 
 document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1]) #cat is ready
 
-document["commands"].textContent = "здесь печатаются команды"
+document["commands"].textContent = " | "
