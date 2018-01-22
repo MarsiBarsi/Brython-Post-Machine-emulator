@@ -62,6 +62,15 @@ def left(event):
     print_new_command()
     execute()
 
+@document['one_or_null'].bind('click')
+def end_of_program(event):
+    commands.append([5,int(document["if_null"].value)],int(document["if_one"].value))
+
+    executable_command[1] += 1
+    document["to_command"].value = executable_command[1]
+
+    print_new_command()
+
 
 @document['end_of_program'].bind('click')
 def end_of_program(event):
@@ -71,6 +80,7 @@ def end_of_program(event):
     commands.append([6,''])
 
     print_new_command()
+
 
 
 #-----
@@ -125,6 +135,9 @@ def print_new_command():
 
     if commands[executable_command[0]][0] == 5:
         new_command_string += ' ? '
+        new_command_string += str(commands[executable_command[0]][1])+','+str(commands[executable_command[0]][2])+' | '
+        document["commands"].textContent += new_command_string
+        return
 
     if commands[executable_command[0]][0] == 6:
         new_command_string += ' ! '
