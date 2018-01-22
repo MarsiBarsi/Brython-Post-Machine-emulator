@@ -70,6 +70,7 @@ def one_or_null(event):
     document["to_command"].value = executable_command[1]
 
     print_new_command()
+    execute()
 
 
 @document['end_of_program'].bind('click')
@@ -111,6 +112,11 @@ def execute():
                 main_cat_moving('up')
                 refresh()
 
+        if commands[executable_command[0]][0] == 5:
+            if band[position[0]] == 1:
+                refresh()
+            if band[position[0]] == 0:
+                refresh()
 
         executable_command[0] = commands[executable_command[0]][1]
         endless_catcher += 1
