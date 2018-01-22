@@ -2,4 +2,7 @@
 
 ***Post Machine emulator on [Brython](https://github.com/brython-dev/brython/ "Github page")***
 
-*progress: ~30%*
+**overall progress: 50%:**
+**done:**
+-It works
+-A bit of animation
