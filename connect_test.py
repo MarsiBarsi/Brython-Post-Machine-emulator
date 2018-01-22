@@ -64,7 +64,7 @@ def left(event):
 
 @document['one_or_null'].bind('click')
 def one_or_null(event):
-    commands.append([5,int(document["if_null"].value),int(document["if_one"].value],)
+    commands.append([5,int(document["if_null"].value),int(document["if_one"].value])
 
     executable_command[1] += 1
     document["to_command"].value = executable_command[1]
