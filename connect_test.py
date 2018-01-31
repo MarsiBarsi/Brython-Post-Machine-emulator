@@ -4,10 +4,10 @@ from browser import document, alert, window, html
 @document['help'].bind('click')
 def help_change(event):
     if help_status[0] == 1:
-        help_status[0] == 0
+        help_status[0] = 0
         document["dummy-pois"].style.visibility = "hidden"
     else:
-        help_status[0] == 1
+        help_status[0] = 1
         document["dummy-pois"].style.visibility = "visible"
 
 
@@ -88,7 +88,7 @@ def one_or_null(event):
 def end_of_program(event):
     document["band"].textContent = 'done'
     document["main_cat"].style.display = "none"
-
+    document["dummy-pois"].style.visibility = "hidden"
     commands.append([6,''])
 
     print_new_command()
