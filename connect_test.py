@@ -1,5 +1,14 @@
 from browser import document, alert, window, html
 
+#----help:
+@document['help'].bind('click')
+def help_change(event):
+    if help_status[0] == 1:
+        help_status[0] == 0
+    else:
+        help_status[0] == 1
+
+
 #----band moving:
 
 @document['button_band_left'].bind('click')
@@ -198,6 +207,7 @@ def main_cat_moving(action):
 
 
 #-----------initialization-----------
+help_status = [1]
 #---------Band:----------
 band_size = 100
 
