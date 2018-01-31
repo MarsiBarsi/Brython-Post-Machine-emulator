@@ -6,6 +6,7 @@
 <script src="/brython.js"></script>
 
 <style type="text/css">
+
     button {
      background: #ff9900; /* Цвет фона */
      padding: 7px 30px; /* Поля вокруг текста */
@@ -15,6 +16,7 @@
      text-align: center; /* Надпись на кнопке по центру */
      border: solid 1px #000000; /* Параметры рамки кнопки */
      cursor: pointer; /* Изменение вида курсора при наведении*/
+
    }
    img {
      -o-transition: all 0.5s ease-in-out;
@@ -35,6 +37,8 @@ footer {
 }
 
  </style>
+
+ <link rel="stylesheet" type="text/css" href="css/tooltip-curved.css" />
 
 </head>
 
@@ -65,6 +69,8 @@ footer {
     </tr>
     <tr>
       <td>
+        <button id="help">HELP</button>
+        <span>|</span>
         <button id="left">←</button>
         <button id="right">→</button>
         <button id="do_one">V</button>
@@ -89,6 +95,27 @@ footer {
 <br>
 </div>
 
+<div class="dummy dummy-image">
+  <div class="dummy-pois">
+    <div class="tooltip tooltip-west">
+      <span class="tooltip-item"></span>
+      <span class="tooltip-content">Did you know that you can travel from A to B?</span>
+    </div>
+    <div class="tooltip tooltip-west">
+      <span class="tooltip-item"></span>
+      <span class="tooltip-content">There are train stations in almost every city!</span>
+    </div>
+    <div class="tooltip tooltip-east">
+      <span class="tooltip-item"></span>
+      <span class="tooltip-content">Staying home for the weekend again? Seriously?</span>
+    </div>
+    <div class="tooltip tooltip-east">
+      <span class="tooltip-item"></span>
+      <span class="tooltip-content">Life is really short, you know? Get out there!</span>
+    </div>
+  </div>
+</div>
+
 </body>
 
 <footer id="footer">
@@ -101,5 +128,4 @@ footer {
               </span>
     </div>
 </footer>
-
 </html>
