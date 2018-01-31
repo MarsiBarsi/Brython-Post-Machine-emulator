@@ -5,8 +5,10 @@ from browser import document, alert, window, html
 def help_change(event):
     if help_status[0] == 1:
         help_status[0] == 0
+        document["dummy-pois"].style.visibility = "hidden"
     else:
         help_status[0] == 1
+        document["dummy-pois"].style.visibility = "visible"
 
 
 #----band moving:
