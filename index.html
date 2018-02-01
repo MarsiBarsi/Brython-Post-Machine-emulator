@@ -6,6 +6,7 @@
 <script src="/brython.js"></script>
 
 <style type="text/css">
+
     button {
      background: #ff9900; /* Цвет фона */
      padding: 7px 30px; /* Поля вокруг текста */
@@ -15,6 +16,7 @@
      text-align: center; /* Надпись на кнопке по центру */
      border: solid 1px #000000; /* Параметры рамки кнопки */
      cursor: pointer; /* Изменение вида курсора при наведении*/
+
    }
    img {
      -o-transition: all 0.5s ease-in-out;
@@ -25,6 +27,7 @@
    html, body {
      height: 100%;
    }
+
 footer {
   position: absolute;
   left: 0;
@@ -32,12 +35,16 @@ footer {
   width: 100%;
   height: 80px;
 }
+
+
  </style>
+
+ <link rel="stylesheet" type="text/css" href="css/tooltip-curved.css" />
 
 </head>
 
 <body onload="brython()">
-<script type="text/python" src='release_0_1.py'>
+<script type="text/python" src='release_1_0.py'>
 </script>
 
 <div style="text-align: center;">
@@ -63,6 +70,8 @@ footer {
     </tr>
     <tr>
       <td>
+        <button id="help">HELP</button>
+        <span>|</span>
         <button id="left">←</button>
         <button id="right">→</button>
         <button id="do_one">V</button>
@@ -87,6 +96,35 @@ footer {
 <br>
 </div>
 
+<div class="dummy dummy-image">
+  <div id="dummy-pois" class="dummy-pois">
+    <div class="tooltip tooltip-west">
+      <span class="tooltip-item"></span>
+      <span class="tooltip-content">It moves the tape</span>
+    </div>
+    <div class="tooltip tooltip-west">
+      <span class="tooltip-item"></span>
+      <span class="tooltip-content">It is an endless tape of Post Machine and cat-carriage who executes commands. Every cell can be filled or empty</span>
+    </div>
+    <div class="tooltip tooltip-east">
+      <span class="tooltip-item"></span>
+      <span class="tooltip-content">Sequence of executed commands</span>
+    </div>
+    <div class="tooltip tooltip-east">
+      <span class="tooltip-item"></span>
+      <span class="tooltip-content">The next command</span>
+    </div>
+    <div class="tooltip tooltip-east">
+      <span class="tooltip-item"></span>
+      <span class="tooltip-content">If the cell is empty, cat executes command from the first field. If it is filled, cat executes command from the second field</span>
+    </div>
+    <div class="tooltip tooltip-east">
+      <span class="tooltip-item"></span>
+      <span class="tooltip-content">End the program</span>
+    </div>
+  </div>
+</div>
+
 </body>
 
 <footer id="footer">
@@ -99,5 +137,4 @@ footer {
               </span>
     </div>
 </footer>
-
 </html>
