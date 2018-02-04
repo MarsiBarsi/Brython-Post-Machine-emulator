@@ -96,7 +96,7 @@ def end_of_program(event):
     main_cat_position = [0,-15,1] #x,y position of cat from center; third parametr is visibility
     commands = [ [0,0] ] # format of commands list
     executable_command = [1,2] # 0 - to execute at the moment; 1 - last command
-    new_command_string += ' | '
+    new_command_string = ' | '
     document["commands"].textContent = new_command_string
     out_string = array_string() #out_string is getting empty band
 
