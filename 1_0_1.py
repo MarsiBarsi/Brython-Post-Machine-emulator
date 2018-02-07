@@ -86,11 +86,12 @@ def one_or_null(event):
 
 @document['end_of_program'].bind('click')
 def end_of_program(event):
+    zeroing()
     document["band"].textContent = 'done'
     document["dummy-pois"].style.visibility = "hidden"
     commands.append([6,''])
     print_new_command()
-    zeroing()
+
 
 def zeroing():
     #-----------------------------
@@ -193,9 +194,9 @@ def check_visibility():
 
 def print_cat_moving():
     if check_visibility() == 1:
-        document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
+        document["main_cat"].style.visibility = "visible"
     else:
-        document["main_cat"].style.transform = "translate({}px,{}px)".format(9999,main_cat_position[1]) #invisible
+        document["main_cat"].style.visibility = "hidden"
 
 def array_string():
     out_string = ' | '
