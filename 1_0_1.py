@@ -90,6 +90,10 @@ def end_of_program(event):
     document["dummy-pois"].style.visibility = "hidden"
     commands.append([6,''])
     print_new_command()
+    zeroing()
+
+def zeroing():
+    #-----------------------------
     commands = [ [0,0] ] # format of commands list
     executable_command = [1,2] # 0 - to execute at the moment; 1 - last command
     document["to_command"].value = 2
@@ -101,7 +105,6 @@ def end_of_program(event):
     document["band"].textContent = out_string #print band
     document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1]) #cat is ready
     document["commands"].textContent = " | "
-
 
 
 
