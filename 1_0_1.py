@@ -86,26 +86,12 @@ def one_or_null(event):
 
 @document['end_of_program'].bind('click')
 def end_of_program(event):
-    zeroing()
-    document["band"].textContent = 'done'
     document["dummy-pois"].style.visibility = "hidden"
+    document["commands_line"].style.visibility = "hidden"
     commands.append([6,''])
     print_new_command()
 
 
-def zeroing():
-    #-----------------------------
-    commands = [ [0,0] ] # format of commands list
-    executable_command = [1,2] # 0 - to execute at the moment; 1 - last command
-    document["to_command"].value = 2
-    band = [0 for i in range (1,band_size)] #band of post machine
-    start_position = [band_size//2] #center of the band
-    position = [(start_position[0]+7)] #coordinate of cat in center of band
-    main_cat_position = [0,-15,1] #x,y position of cat from center; third parametr is visibility
-    out_string = array_string() #out_string is getting empty band
-    document["band"].textContent = out_string #print band
-    document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1]) #cat is ready
-    document["commands"].textContent = " | "
 
 
 
