@@ -92,9 +92,6 @@ def end_of_program(event):
     print_new_command()
 
 
-
-
-
 #-----
 #-----functions:
 def execute():
@@ -181,6 +178,7 @@ def check_visibility():
 def print_cat_moving():
     if check_visibility() == 1:
         document["main_cat"].style.visibility = "visible"
+        document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
     else:
         document["main_cat"].style.visibility = "hidden"
 
