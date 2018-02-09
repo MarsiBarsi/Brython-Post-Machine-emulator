@@ -17,7 +17,6 @@ def lang_change_to_ru(event):
 
 @document['eng_lang'].bind('click')
 def lang_change_to_eng(event):
-    document["tooltip:third-child"].textContent = "privet"
     document["last_lang"].textContent = "мда"
 
 
