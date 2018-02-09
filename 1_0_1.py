@@ -12,6 +12,7 @@ def help_change(event):
 
 @document['rus_lang'].bind('click')
 def lang_change_to_ru(event):
+    document["dummy-pois"].style.visibility = "hidden"
     document["tooltip:first-child"].textContent = "privet"
     document["second_text"].textContent = "привет"
 
