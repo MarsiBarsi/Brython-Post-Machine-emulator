@@ -38,6 +38,12 @@ footer {
   height: 80px;
 }
 
+  #lang {
+  	position: absolute;
+  	left: 50%;
+  	top: 55px;
+  	margin-left: -435px;
+  }
 
  </style>
 
@@ -102,11 +108,11 @@ footer {
   <div id="dummy-pois" class="dummy-pois">
     <div class="tooltip tooltip-west">
       <span class="tooltip-item"></span>
-      <span class="tooltip-content">It moves the tape</span>
+      <span  class="tooltip-content">It moves the tape</span>
     </div>
     <div class="tooltip tooltip-west">
       <span class="tooltip-item"></span>
-      <span class="tooltip-content">It is an endless tape of Post Machine and cat-carriage who executes commands. Every cell can be filled or empty</span>
+      <span  id="second_text" class="tooltip-content">It is an endless tape of Post Machine and cat-carriage who executes commands. Every cell can be filled or empty</span>
     </div>
     <div class="tooltip tooltip-east">
       <span class="tooltip-item"></span>
@@ -127,6 +133,14 @@ footer {
   </div>
 </div>
 
+<div id="lang">
+  <input style="width: 30px; height: 30px;" type="image" id="rus_lang" src="images/rus.png">
+    <img id="rus" style="width: 30px; height: 30px;" src="images/rus.png" alt="">
+  </input>
+  <button id="eng_lang">
+    <img id="eng" style="width: 30px; height: 30px;" src="images/eng.png" alt="">
+  </button>
+</div>
 </body>
 
 <footer id="footer">
