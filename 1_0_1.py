@@ -12,13 +12,24 @@ def help_change(event):
 
 @document['rus_lang'].bind('click')
 def lang_change_to_ru(event):
-    document["dummy-pois"].style.visibility = "hidden"
-    document["tooltip:first-child"].textContent = "privet"
-    document["second_text"].textContent = "привет"
+    document["text-1"].textContent = "Передвинуть ленту"
+    document["text-2"].textContent = "Это бесконая лента машины Поста и кот-каретка. Каждая ячейка ленты может быть заполнена или пуста"
+    document["text-3"].textContent = "Последовательность исполненных комманд"
+    document["text-4"].textContent = "Следующая команда к исполнению"
+    document["text-5"].textContent = "Если ячейка пуста, кот исполнит команду из первого поля. Если ячейка заполнена, то из второго."
+    document["text-6"].textContent = "Завершить программу"
 
 @document['eng_lang'].bind('click')
 def lang_change_to_eng(event):
-    document["last_lang"].textContent = "мда"
+    document["text-1"].textContent = "It moves the tape"
+    document["text-2"].textContent = "It is an endless tape of Post Machine and cat-carriage who executes commands. Every cell can be filled or empty"
+    document["text-3"].textContent = "Sequence of executed commands"
+    document["text-4"].textContent = "The next command"
+    document["text-5"].textContent = "If the cell is empty, cat executes command from the first field. If it is filled, cat executes command from the second field"
+    document["text-6"].textContent = "End the program"
+
+
+
 
 
 #----band moving:
