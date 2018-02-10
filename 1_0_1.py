@@ -18,6 +18,7 @@ def lang_change_to_ru(event):
     document["text-4"].textContent = "Следующая команда к исполнению"
     document["text-5"].textContent = "Если ячейка пуста, кот исполнит команду из первого поля. Если ячейка заполнена, то из второго."
     document["text-6"].textContent = "Завершить программу"
+    document["help"].textContent = "Подзказки"
 
 @document['eng_lang'].bind('click')
 def lang_change_to_eng(event):
@@ -27,7 +28,7 @@ def lang_change_to_eng(event):
     document["text-4"].textContent = "The next command"
     document["text-5"].textContent = "If the cell is empty, cat executes command from the first field. If it is filled, cat executes command from the second field"
     document["text-6"].textContent = "End the program"
-
+    document["help"].textContent = "HELP"
 
 
 
