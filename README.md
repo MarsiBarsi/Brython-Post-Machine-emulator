@@ -1,11 +1,11 @@
 # marsibarsi.github.io
 
-***Post Machine emulator on [Brython](https://github.com/brython-dev/brython/ "Github page")***
+***Post Machine Online emulator on [Brython](https://github.com/brython-dev/brython/ "Github page")***
 
 **en:**
 
 **What can it do?**
-- Full emulation of Post Machine
+- Full online emulation of Post Machine
 - Almost endless tape for any algorithms on Post Machine
 
 **It contains:**
@@ -16,12 +16,12 @@
 <script type="text/python" src='release_1_0.py'>
 ```
 -Brython connection
-- *release_1_0.py* - Post Machine emulator on Python
+- *release_1_0.py* - Post Machine Online emulator on Python
 
 **ru:**
 
 **Что это?**
-- Полная эмуляция машины Поста
+- Полная онлайн эмуляция машины Поста
 - Почти бесконечная лента для реализации совершенно любого алгоритма на машине Поста
 
 **Содержание:**
@@ -32,4 +32,4 @@
 <script type="text/python" src='release_1_0.py'>
 ```
 -Подключение Brython
-- *release_1_0.py* - Эмулятор машины поста на языке Python
+- *release_1_0.py* - Эмулятор машины поста онлайн на языке Python

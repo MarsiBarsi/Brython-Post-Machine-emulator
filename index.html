@@ -27,6 +27,7 @@
    }
    html, body {
      height: 100%;
+     transition: all 0.5s ease-in-out;
    }
 
 footer {
@@ -37,6 +38,12 @@ footer {
   height: 80px;
 }
 
+  #lang {
+  	position: absolute;
+  	left: 50%;
+  	top: 55px;
+  	margin-left: -435px;
+  }
 
  </style>
 
@@ -45,7 +52,7 @@ footer {
 </head>
 
 <body onload="brython()">
-<script type="text/python" src='release_1_0.py'>
+<script type="text/python" src='release_1_1.py'>
 </script>
 
 <div style="text-align: center;">
@@ -70,13 +77,13 @@ footer {
       <td id='cat_way'> <img id="main_cat" style="width: 35px; height: 122px;" src="images/3.png" alt=""></td>
     </tr>
     <tr>
-      <td>
+      <td id="commands_line">
         <button id="help">HELP</button>
         <span>|</span>
         <button id="left">←</button>
         <button id="right">→</button>
         <button id="do_one">V</button>
-        <button id="do_null">0</button>
+        <button id="do_null">↕</button>
         <input type="number" size="1" id="to_command" min="1" max="100" value="2">
          <span> | </span>
         <button id="one_or_null">?</button>
@@ -101,31 +108,37 @@ footer {
   <div id="dummy-pois" class="dummy-pois">
     <div class="tooltip tooltip-west">
       <span class="tooltip-item"></span>
-      <span class="tooltip-content">It moves the tape</span>
+      <span id="text-1" class="tooltip-content">It moves the tape</span>
     </div>
     <div class="tooltip tooltip-west">
       <span class="tooltip-item"></span>
-      <span class="tooltip-content">It is an endless tape of Post Machine and cat-carriage who executes commands. Every cell can be filled or empty</span>
+      <span id="text-2" class="tooltip-content">It is an endless tape of Post Machine and cat-carriage who executes commands. Every cell can be filled or empty</span>
     </div>
     <div class="tooltip tooltip-east">
       <span class="tooltip-item"></span>
-      <span class="tooltip-content">Sequence of executed commands</span>
+      <span id="text-3" class="tooltip-content">Sequence of executed commands</span>
     </div>
     <div class="tooltip tooltip-east">
       <span class="tooltip-item"></span>
-      <span class="tooltip-content">The next command</span>
+      <span id="text-4" class="tooltip-content">The next command</span>
     </div>
     <div class="tooltip tooltip-east">
       <span class="tooltip-item"></span>
-      <span class="tooltip-content">If the cell is empty, cat executes command from the first field. If it is filled, cat executes command from the second field</span>
+      <span id="text-5" class="tooltip-content">If the cell is empty, cat executes command from the first field. If it is filled, cat executes command from the second field</span>
     </div>
     <div class="tooltip tooltip-east">
       <span class="tooltip-item"></span>
-      <span class="tooltip-content">End the program</span>
+      <span id="text-6" id="last_lang" class="tooltip-content">End the program</span>
     </div>
   </div>
 </div>
 
+<div id="lang">
+  <input style="width: 30px; height: 30px;" type="image" id="rus_lang" src="images/rus.png">
+  </input>
+  <input style="width: 30px; height: 30px;" type="image" id="eng_lang" src="images/eng.png">
+  </input>
+</div>
 </body>
 
 <footer id="footer">
