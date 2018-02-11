@@ -10,6 +10,28 @@ def help_change(event):
         help_status[0] = 1
         document["dummy-pois"].style.visibility = "visible"
 
+@document['rus_lang'].bind('click')
+def lang_change_to_ru(event):
+    document["text-1"].textContent = "Передвинуть ленту"
+    document["text-2"].textContent = "Это бесконая лента машины Поста и кот-каретка. Каждая ячейка ленты может быть заполнена или пуста"
+    document["text-3"].textContent = "Последовательность исполненных комманд"
+    document["text-4"].textContent = "Следующая команда к исполнению"
+    document["text-5"].textContent = "Если ячейка пуста, кот исполнит команду из первого поля. Если ячейка заполнена, то из второго."
+    document["text-6"].textContent = "Завершить программу"
+    document["help"].textContent = "Подзказки"
+
+@document['eng_lang'].bind('click')
+def lang_change_to_eng(event):
+    document["text-1"].textContent = "It moves the tape"
+    document["text-2"].textContent = "It is an endless tape of Post Machine and cat-carriage who executes commands. Every cell can be filled or empty"
+    document["text-3"].textContent = "Sequence of executed commands"
+    document["text-4"].textContent = "The next command"
+    document["text-5"].textContent = "If the cell is empty, cat executes command from the first field. If it is filled, cat executes command from the second field"
+    document["text-6"].textContent = "End the program"
+    document["help"].textContent = "HELP"
+
+
+
 
 #----band moving:
 
@@ -86,13 +108,10 @@ def one_or_null(event):
 
 @document['end_of_program'].bind('click')
 def end_of_program(event):
-    document["band"].textContent = 'done'
-    document["main_cat"].style.display = "none"
     document["dummy-pois"].style.visibility = "hidden"
+    document["commands_line"].style.visibility = "hidden"
     commands.append([6,''])
-
     print_new_command()
-
 
 
 #-----
@@ -180,9 +199,10 @@ def check_visibility():
 
 def print_cat_moving():
     if check_visibility() == 1:
+        document["main_cat"].style.visibility = "visible"
         document["main_cat"].style.transform = "translate({}px,{}px)".format(main_cat_position[0],main_cat_position[1])
     else:
-        document["main_cat"].style.transform = "translate({}px,{}px)".format(9999,main_cat_position[1]) #invisible
+        document["main_cat"].style.visibility = "hidden"
 
 def array_string():
     out_string = ' | '
@@ -206,6 +226,7 @@ def main_cat_moving(action):
         refresh()
         main_cat_position[1] += 30
         print_cat_moving()
+
 
 
 #-----------initialization-----------

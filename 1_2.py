@@ -19,6 +19,7 @@ def lang_change_to_ru(event):
     document["text-5"].textContent = "Если ячейка пуста, кот исполнит команду из первого поля. Если ячейка заполнена, то из второго."
     document["text-6"].textContent = "Завершить программу"
     document["help"].textContent = "Подзказки"
+    document["tape_setting"].textContent = "Установка ленты"
 
 @document['eng_lang'].bind('click')
 def lang_change_to_eng(event):
@@ -29,9 +30,7 @@ def lang_change_to_eng(event):
     document["text-5"].textContent = "If the cell is empty, cat executes command from the first field. If it is filled, cat executes command from the second field"
     document["text-6"].textContent = "End the program"
     document["help"].textContent = "HELP"
-
-
-
+    document["tape_setting"].textContent = "Set tape"
 
 #----band moving:
 
@@ -226,7 +225,6 @@ def main_cat_moving(action):
         refresh()
         main_cat_position[1] += 30
         print_cat_moving()
-
 
 
 #-----------initialization-----------
