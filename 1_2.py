@@ -238,7 +238,7 @@ start_position = [band_size//2] #center of the band
 #----cat:---------------
 position = [(start_position[0]+7)] #coordinate of cat in center of band
 
-main_cat_position = [0,-15,1] #x,y position of cat from center; third parametr is visibility
+main_cat_position = [0,0,1] #x,y position of cat from center; third parametr is visibility
 
 #-----commands:----------
 # list of commands consists of comand-lists. every comand-list has three paramets
