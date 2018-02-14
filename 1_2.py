@@ -187,6 +187,7 @@ def print_new_command():
 
 
 def refresh():
+    
     out_string = array_string()
     document["band"].textContent = out_string
 
@@ -228,7 +229,7 @@ def main_cat_moving(action):
 
 
 #-----------initialization-----------
-help_status = [1]
+help_status = [1] # help is active
 #---------Band:----------
 band_size = 100
 
