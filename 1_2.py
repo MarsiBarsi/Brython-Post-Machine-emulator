@@ -11,7 +11,7 @@ def help_change(event):
         document["dummy-pois"].style.visibility = "visible"
 
 @document['tape_setting'].bind('click')
-def help_change(event):
+def tape_setting(event):
     status["help"] = 1
     help_change()
     if status["tape_setting"] == 1:
