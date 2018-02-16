@@ -13,13 +13,13 @@ def help_change(event):
 @document['tape_setting'].bind('click')
 def tape_setting(event):
     status["help"] = 1
-    help_change()
     if status["tape_setting"] == 1:
         status["tape_setting"] = 0
         document["not_for_setting"].style.visibility = "hidden"
     else:
         status["tape_setting"] = 1
         document["not_for_setting"].style.visibility = "visible"
+    help_change()
 
 
 @document['rus_lang'].bind('click')
