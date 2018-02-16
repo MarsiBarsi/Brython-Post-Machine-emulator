@@ -3,12 +3,24 @@ from browser import document, alert, window, html
 #----help:
 @document['help'].bind('click')
 def help_change(event):
-    if help_status[0] == 1:
-        help_status[0] = 0
+    if status["help"] == 1:
+        status["help"] = 0
         document["dummy-pois"].style.visibility = "hidden"
     else:
-        help_status[0] = 1
+        status["help"] = 1
         document["dummy-pois"].style.visibility = "visible"
+
+@document['tape_setting'].bind('click')
+def help_change(event):
+    status["help"] = 1
+    help_change()
+    if status["tape_setting"] == 1:
+        status["tape_setting"] = 0
+        document["not_for_setting"].style.visibility = "hidden"
+    else:
+        status["tape_setting"] = 1
+        document["not_for_setting"].style.visibility = "visible"
+
 
 @document['rus_lang'].bind('click')
 def lang_change_to_ru(event):
@@ -187,7 +199,7 @@ def print_new_command():
 
 
 def refresh():
-    
+
     out_string = array_string()
     document["band"].textContent = out_string
 
@@ -229,7 +241,7 @@ def main_cat_moving(action):
 
 
 #-----------initialization-----------
-help_status = [1] # help is active
+status = {"help" : 1, "tape_setting" : 0} # help is active, tape_setting - not
 #---------Band:----------
 band_size = 100
 
