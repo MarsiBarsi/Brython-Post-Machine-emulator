@@ -14,11 +14,11 @@ def help_change(event):
 def tape_setting(event):
     status["help"] = 0
     document["dummy-pois"].style.visibility = "hidden"
-    if status["tape_setting"] == 1:
-        status["tape_setting"] = 0
+    if status["tape_setting"] == 0:
+        status["tape_setting"] = 1
         document["not_for_setting"].style.visibility = "hidden"
     else:
-        status["tape_setting"] = 1
+        status["tape_setting"] = 0
         document["not_for_setting"].style.visibility = "visible"
 
 
@@ -66,10 +66,11 @@ def do_one(event):
 
     commands.append([3,int(document["to_command"].value)])
 
-    executable_command[1] += 1
-    document["to_command"].value = executable_command[1]
+    if status["tape_setting"] == 0:
+        executable_command[1] += 1
+        document["to_command"].value = executable_command[1]
+        print_new_command()
 
-    print_new_command()
     execute()
 
 
@@ -77,22 +78,22 @@ def do_one(event):
 @document['do_null'].bind('click')
 def do_null(event):
     commands.append([4,int(document["to_command"].value)])
+    if status["tape_setting"] == 0:
+        executable_command[1] += 1
+        document["to_command"].value = executable_command[1]
+        print_new_command()
 
-    executable_command[1] += 1
-    document["to_command"].value = executable_command[1]
-
-    print_new_command()
     execute()
 
 
 @document['right'].bind('click')
 def right(event):
     commands.append([2,int(document["to_command"].value)])
+    if status["tape_setting"] == 0:
+        executable_command[1] += 1
+        document["to_command"].value = executable_command[1]
+        print_new_command()
 
-    executable_command[1] += 1
-    document["to_command"].value = executable_command[1]
-
-    print_new_command()
     execute()
 
 
@@ -100,10 +101,11 @@ def right(event):
 def left(event):
     commands.append([1,int(document["to_command"].value)])
 
-    executable_command[1] += 1
-    document["to_command"].value = executable_command[1]
+    if status["tape_setting"] == 0:
+        executable_command[1] += 1
+        document["to_command"].value = executable_command[1]
+        print_new_command()
 
-    print_new_command()
     execute()
 
 @document['one_or_null'].bind('click')
