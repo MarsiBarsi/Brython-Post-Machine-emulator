@@ -63,6 +63,12 @@ def button_band_right(event):
 
 @document['do_one'].bind('click')
 def do_one(event):
+    if status["tape_setting"] == 1:
+        if band[position[0]] == 0:
+            band[position[0]] = 1
+            main_cat_moving('up')
+            refresh()
+        return
 
     commands.append([3,int(document["to_command"].value)])
 
@@ -77,6 +83,13 @@ def do_one(event):
 
 @document['do_null'].bind('click')
 def do_null(event):
+    if status["tape_setting"] == 1:
+        if band[position[0]] == 1:
+            band[position[0]] = 0
+            main_cat_moving('up')
+            refresh()
+        return
+
     commands.append([4,int(document["to_command"].value)])
     if status["tape_setting"] == 0:
         executable_command[1] += 1
@@ -88,23 +101,32 @@ def do_null(event):
 
 @document['right'].bind('click')
 def right(event):
+    if status["tape_setting"] == 1:
+        position[0] += 1
+        main_cat_moving('right')
+        refresh()
+        return
+
     commands.append([2,int(document["to_command"].value)])
-    if status["tape_setting"] == 0:
-        executable_command[1] += 1
-        document["to_command"].value = executable_command[1]
-        print_new_command()
+    executable_command[1] += 1
+    document["to_command"].value = executable_command[1]
+    print_new_command()
 
     execute()
 
 
 @document['left'].bind('click')
 def left(event):
-    commands.append([1,int(document["to_command"].value)])
+    if status["tape_setting"] == 1:
+        position[0] -= 1
+        main_cat_moving('left')
+        refresh()
+        return
 
-    if status["tape_setting"] == 0:
-        executable_command[1] += 1
-        document["to_command"].value = executable_command[1]
-        print_new_command()
+    commands.append([1,int(document["to_command"].value)])
+    executable_command[1] += 1
+    document["to_command"].value = executable_command[1]
+    print_new_command()
 
     execute()
 
@@ -166,8 +188,6 @@ def execute():
                 endless_catcher += 1
                 continue;
 
-        if status["tape_setting"] == 1:
-            return
 
         executable_command[0] = commands[executable_command[0]][1]
         endless_catcher += 1
