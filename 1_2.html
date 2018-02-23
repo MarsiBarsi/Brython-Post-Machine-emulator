@@ -1,59 +1,58 @@
 <html>
 
 <head>
-<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Post Machine with cats</title>
-<meta name="yandex-verification" content="c2e1d468dd999312" />
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Post Machine with cats</title>
+  <meta name="yandex-verification" content="c2e1d468dd999312" />
 
-<script src="/brython.js"></script>
+  <script src="/brython.js"></script>
 
-<style type="text/css">
+  <style type="text/css">
 
-    button {
-     background: #ff9900; /* Цвет фона */
-     padding: 7px 30px; /* Поля вокруг текста */
-     font-size: 13px; /* Размер шрифта */
-     font-weight: bold; /* Насыщенность шрифта */
-     color: #000000; /* Цвет шрифта */
-     text-align: center; /* Надпись на кнопке по центру */
-     border: solid 1px #000000; /* Параметры рамки кнопки */
-     cursor: pointer; /* Изменение вида курсора при наведении*/
+      button {
+       background: #ff9900; /* Цвет фона */
+       padding: 7px 30px; /* Поля вокруг текста */
+       font-size: 13px; /* Размер шрифта */
+       font-weight: bold; /* Насыщенность шрифта */
+       color: #000000; /* Цвет шрифта */
+       text-align: center; /* Надпись на кнопке по центру */
+       border: solid 1px #000000; /* Параметры рамки кнопки */
+       cursor: pointer; /* Изменение вида курсора при наведении*/
 
-   }
-   img {
-     -o-transition: all 0.5s ease-in-out;
-     -moz-transition: all 0.5s ease-in-out;
-     -webkit-transition: all 0.5s ease-in-out;
-     transition: all 0.5s ease-in-out;
-   }
-   html, body {
-     height: 100%;
-     transition: all 0.5s ease-in-out;
-   }
+     }
+     img {
+       -o-transition: all 0.5s ease-in-out;
+       -moz-transition: all 0.5s ease-in-out;
+       -webkit-transition: all 0.5s ease-in-out;
+       transition: all 0.5s ease-in-out;
+     }
+     html, body {
+       height: 100%;
+       transition: all 0.5s ease-in-out;
+     }
 
-footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 80px;
-}
-
-  #lang {
-  	position: absolute;
-  	left: 50%;
-  	top: 55px;
-  	margin-left: -435px;
+  footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
   }
 
- </style>
+    #lang {
+    	position: absolute;
+    	left: 50%;
+    	top: 55px;
+    	margin-left: -435px;
+    }
 
- <link rel="stylesheet" type="text/css" href="css/tooltip-curved.css" />
+   </style>
+
+  <link rel="stylesheet" type="text/css" href="css/tooltip-curved.css" />
 
 </head>
 
 <body onload="brython()">
-<script type="text/python" src='1_2.py'>
-</script>
+<script type="text/python" src='1_2.py'></script>
 
 <div style="text-align: center;">
   <img style="width: 49px; height: 49px;" src="images/1.jpg" alt="">
@@ -78,12 +77,17 @@ footer {
     </tr>
     <tr>
       <td id="commands_line">
+      <div style=" width: 960px;
+        margin-left:auto;
+        margin-right:auto;">
+      <div style="float:left;">
         <button id="tape_setting">Set tape</button>
         <span>|</span>
         <button id="left">←</button>
         <button id="right">→</button>
         <button id="do_one">V</button>
         <button id="do_null">↕</button>
+      </div>
         <div id="not_for_setting" style="float:left;">
           <input type="number" size="1" id="to_command" min="1" max="100" value="2">
            <span> | </span>
@@ -94,6 +98,7 @@ footer {
           <button id="end_of_program">!</button>
           <span>|</span>
           <button id="help">HELP</button>
+        </div>
       </div>
       </td>
     </tr>
