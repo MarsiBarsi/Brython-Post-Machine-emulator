@@ -166,6 +166,9 @@ def execute():
                 endless_catcher += 1
                 continue;
 
+        if status["tape_setting"] == 1:
+            return
+
         executable_command[0] = commands[executable_command[0]][1]
         endless_catcher += 1
         if endless_catcher > 1000:
