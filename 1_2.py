@@ -24,6 +24,8 @@ def tape_setting(event):
 
 @document['rus_lang'].bind('click')
 def lang_change_to_ru(event):
+    document["not_for_setting"].style.width = "980px"
+
     document["text-1"].textContent = "Передвинуть ленту"
     document["text-2"].textContent = "Это бесконая лента машины Поста и кот-каретка. Каждая ячейка ленты может быть заполнена или пуста"
     document["text-3"].textContent = "Последовательность исполненных комманд"
@@ -33,8 +35,11 @@ def lang_change_to_ru(event):
     document["help"].textContent = "Подзказки"
     document["tape_setting"].textContent = "Установка ленты"
 
+
 @document['eng_lang'].bind('click')
 def lang_change_to_eng(event):
+    document["not_for_setting"].style.width = "920px"
+
     document["text-1"].textContent = "It moves the tape"
     document["text-2"].textContent = "It is an endless tape of Post Machine and cat-carriage who executes commands. Every cell can be filled or empty"
     document["text-3"].textContent = "Sequence of executed commands"
@@ -43,6 +48,7 @@ def lang_change_to_eng(event):
     document["text-6"].textContent = "End the program"
     document["help"].textContent = "HELP"
     document["tape_setting"].textContent = "Set tape"
+
 
 #----band moving:
 
