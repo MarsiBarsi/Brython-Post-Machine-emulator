@@ -24,7 +24,7 @@ def tape_setting(event):
 
 @document['rus_lang'].bind('click')
 def lang_change_to_ru(event):
-    document["button_bar"].style.width = "980px"
+    document["button_bar"].style.width = "1010px"
 
     document["text-1"].textContent = "Передвинуть ленту"
     document["text-2"].textContent = "Это бесконая лента машины Поста и кот-каретка. Каждая ячейка ленты может быть заполнена или пуста"
