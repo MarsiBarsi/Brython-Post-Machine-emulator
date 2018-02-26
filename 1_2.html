@@ -20,60 +20,53 @@
   <img style="width: 49px; height: 49px;" src="images/1.jpg" alt="">
   <br>
 -----------------------------------------------------------------------------------------------
-<table style="text-align: center; width: 100%;" border="0" cellpadding="0" cellspacing="0">
-  <tbody>
-    <tr>
-      <td>
-        <button id="button_band_left"><=</button>
-        &nbsp;
-        <span id="band" style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 38px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; display: inline ! important; float: none;">
-| 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | </span>
-        <button id="button_band_right">=></button>
-        <br>
-      </td>
-    </tr>
-    <tr>
-      <td id='cat_way'> <img id="main_cat" style="width: 35px; height: 122px;" src="images/3.png" alt=""></td>
-    </tr>
-    <tr>
-      <td id="commands_line">
+<div>
+  <button id="button_band_left"><=</button>
+  &nbsp;
+  <span id="band" style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: 38px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; display: inline ! important; float: none;">
+  | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | </span>
+  <button id="button_band_right">=></button>
+</div>
+
+<div id='cat_way' >
+   <img id="main_cat" style="width: 35px; height: 122px;" src="images/3.png" alt="">
+</div>
+
+      <div id="commands_line">
       <div id="button_bar" style=" width: 920px;
         margin-left:auto;
         margin-right:auto;">
 
-      <div style="float:left;
-                  ">
-        <button id="tape_setting">Set tape</button>
-        <span>|</span>
-        <button id="left">←</button>
-        <button id="right">→</button>
-        <button id="do_one">V</button>
-        <button id="do_null">↕</button>
-      </div>
+            <div style="float:left;
+                        ">
+              <button id="tape_setting">Set tape</button>
+              <span>|</span>
+              <button id="left">←</button>
+              <button id="right">→</button>
+              <button id="do_one">V</button>
+              <button id="do_null">↕</button>
+            </div>
 
-        <div id="not_for_setting" style="float:left; margin-right: auto;">
-          <span> | </span>
-          <input type="number" size="1" id="to_command" min="1" max="100" value="2">
-           <span> | </span>
-          <button id="one_or_null">?</button>
-          <input type="number" size="1" id="if_null" min="1" max="100" value="1">
-          <input type="number" size="1" id="if_one" min="1" max="100" value="1">
-          <span>|</span>
-          <button id="end_of_program">!</button>
-          <span>|</span>
-          <button id="help">HELP</button>
-        </div>
+              <div id="not_for_setting" style="float:left; margin-right: auto;">
+                <span> | </span>
+                <input type="number" size="1" id="to_command" min="1" max="100" value="2">
+                 <span> | </span>
+                <button id="one_or_null">?</button>
+                <input type="number" size="1" id="if_null" min="1" max="100" value="1">
+                <input type="number" size="1" id="if_one" min="1" max="100" value="1">
+                <span>|</span>
+                <button id="end_of_program">!</button>
+                <span>|</span>
+                <button id="help">HELP</button>
+              </div>
       </div>
-      </td>
-    </tr>
-    <tr>
-      <td>
+    </div>
+
+    <div>
         <br>
         <p style="padding-left: 25%; width: 50%; text-align: center;" id="commands">test</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+    </div>
+
 <br>
 </div>
 
