@@ -147,6 +147,7 @@ def one_or_null(event):
 def end_of_program(event):
     document["dummy-pois"].style.visibility = "hidden"
     document["commands_line"].style.visibility = "hidden"
+    document["not_for_setting"].style.visibility = "hidden"
     commands.append([6,''])
     print_new_command()
 
