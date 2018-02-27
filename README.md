@@ -29,7 +29,7 @@
 ```
 <script src="/brython.js"></script>
 <body onload="brython()">
-<script type="text/python" src='release_1_0.py'>
+<script type="text/python" src='release_1_2.py'>
 ```
 -Подключение Brython
-- *release_1_0.py* - Эмулятор машины поста онлайн на языке Python
+- *release_1_2.py* - Эмулятор машины поста онлайн на языке Python
