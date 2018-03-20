@@ -1,0 +1,187 @@
+<html>
+
+<head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>всем привет</title>
+  <meta name="yandex-verification" content="c2e1d468dd999312" />
+
+  <script src="/brython.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="css/tooltip-curved.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+</head>
+
+<body>
+  <p>&nbsp; function [res] = last ()<br />
+&nbsp; &nbsp; &nbsp; f = @(x) x.^(3./2);<br />
+&nbsp; &nbsp; &nbsp; pr = @(x) sqrt(1 + ((3./2)*sqrt(x)).^2);<br />
+&nbsp; &nbsp; &nbsp; res = (quad(pr, 0, 1));</p>
+
+<p>&nbsp; &nbsp; &nbsp; x=0:0.01:3;<br />
+&nbsp; &nbsp; &nbsp; y = f(x);</p>
+
+<p>&nbsp; &nbsp; &nbsp; plot(x,y);<br />
+&nbsp; &nbsp; &nbsp; axis equal</p>
+
+<p><br />
+&nbsp; &nbsp; &nbsp; endfunction</p>
+
+<p>&nbsp;</p>
+
+<p>function [] = square_volume()<br />
+t = 0:0.1:2*pi;<br />
+z = t - sin(t);<br />
+alpha = -pi:0.1:pi+0.1;<br />
+x = (cos(alpha)&#39;)*z;<br />
+y = (sin(alpha)&#39;)*z;<br />
+t = kron(ones(length(alpha), 1), t);<br />
+&nbsp;<br />
+mesh(x,y,t)</p>
+
+<p>hold on<br />
+axis equal</p>
+
+<p>t = 0:0.1:2*pi;<br />
+z = 1 - cos(t);<br />
+alpha = -pi:0.1:pi+0.1;<br />
+x = (cos(alpha)&#39;)*z;<br />
+y = (sin(alpha)&#39;)*z;<br />
+t = kron(ones(length(alpha), 1), t);<br />
+&nbsp;<br />
+mesh(x,y,t)</p>
+
+<p>q = 2.*pi.*quad(&#39;y = (x-sin(x)).*sqrt((1-cos(x)).^2 + (sin(x)).^2)&#39;, 0, 2*pi);<br />
+disp(q);<br />
+draw<br />
+endfunction</p>
+
+<p>function[y]=pr1(x)<br />
+y = (1-cos(x)).^2;<br />
+end<br />
+function[y]=pr2(x)<br />
+y = (sin(x)).^2;<br />
+end<br />
+function[y]=final(x)<br />
+y = (@pr1+@pr2).^(1./2);<br />
+end<br />
+function[y] = final1(x)<br />
+y = (x-sin(x)).*@final;<br />
+end<br />
+function[]=draw()<br />
+figure<br />
+t = 0:0.1:2*pi;<br />
+z = t - sin(t);<br />
+plot(t, z, &#39;b&#39;)<br />
+hold on<br />
+t = 0:0.1:2*pi;<br />
+z = 1 - cos(t);<br />
+plot(t,z,&#39;r&#39;)<br />
+end</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>function [] = square_volume1()<br />
+&nbsp; % ������ 4 oy<br />
+t = 0:0.1:4;<br />
+z = sqrt(t);<br />
+alpha = -pi:0.1:pi+0.1;<br />
+x = (cos(alpha)&#39;)*z;<br />
+y = (sin(alpha)&#39;)*z;<br />
+t = kron(ones(length(alpha), 1), t);<br />
+&nbsp;<br />
+mesh(x,y,t)<br />
+q1 = 2.*pi.*quad(@final1, 0, 4);<br />
+&nbsp;<br />
+hold on<br />
+axis equal<br />
+disp(q1);<br />
+endfunction</p>
+
+<p>function[y]=final1(x)<br />
+y = sqrt(x).*sqrt(1+(1./(2.*sqrt(x))).^2);<br />
+end</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>function [] = task4 ()<br />
+t = 0:0.1:((2.^(1./2))./2);&nbsp;<br />
+z = 2.*asin(t);</p>
+
+<p>alpha = -pi:0.1:pi+0.1;<br />
+x = (cos(alpha)&#39;).*z;<br />
+y = (sin(alpha)&#39;).*z;<br />
+t = kron(ones(length(alpha), 1), t);</p>
+
+<p>mesh(x,y,t)<br />
+q1 = pi*quad(&#39;y = (2.*asin(x)).^2&#39;,0,((2.^(1./2))./2))</p>
+
+<p>hold on</p>
+
+<p>t = ((2.^(1./2))./2):0.1:1;<br />
+z = 2.*acos(t);</p>
+
+<p>alpha = -pi:0.1:pi+0.1;<br />
+x = (cos(alpha)&#39;).*z;<br />
+y = (sin(alpha)&#39;).*z;<br />
+t = kron(ones(length(alpha), 1), t);</p>
+
+<p>mesh(x,y,t)<br />
+q2 = pi*quad(&#39;y = (2.*acos(x)).^2&#39;,((2.^(1./2))./2),1)<br />
+disp(q1+q2)<br />
+endfunction</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>function [] = task6 ()<br />
+t = -log(2):0.1:0;<br />
+z = 2 + t*0;<br />
+alpha = -pi:0.1:pi+0.1;<br />
+x = (cos(alpha)&#39;)*z;<br />
+y = (sin(alpha)&#39;)*z;<br />
+t = kron(ones(length(alpha), 1), t);<br />
+&nbsp;<br />
+mesh(x,y,t)<br />
+q1 = pi*quad(@myf, -log(2),0);<br />
+&nbsp;<br />
+hold on<br />
+&nbsp;<br />
+t = -log(2):0.1:0;<br />
+z = exp(-t);<br />
+alpha = -pi:0.1:pi+0.1;<br />
+x = (cos(alpha)&#39;)*z;<br />
+y = (sin(alpha)&#39;)*z;<br />
+t = kron(ones(length(alpha), 1), t);<br />
+&nbsp;<br />
+mesh(x,y,t)<br />
+q2 = pi*quad(@myf2, -log(2),0);<br />
+disp(q1-q2)</p>
+
+<p>t = 0:0.1:2;<br />
+z = 0 + t*0;<br />
+alpha = -pi:0.1:pi+0.1;<br />
+x = (cos(alpha)&#39;)*z;<br />
+y = (sin(alpha)&#39;)*z;<br />
+t = kron(ones(length(alpha), 1), t);<br />
+&nbsp;<br />
+mesh(x,y,t)<br />
+end<br />
+&nbsp;</p>
+
+<p>function[x]=myf();<br />
+x = (2).^2;<br />
+end<br />
+&nbsp;<br />
+function[y] = myf2(x)<br />
+y = (exp(-x)).^2;<br />
+end</p>
+
+</body>
+
+
+</html>
