@@ -1,0 +1,13 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 204, 153, .9);
+}
+
+.app {
+    padding: 300px;
+    background-color: rgba(255, 255, 255, .4);
+    border: 2px solid #333;
+    border-radius: 5px;
+}
